@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 1.constructor
+		// 原型对象内的一个属性,指向该对象相关联的构造函数
+		
+		// 2.hasOwnProperty
+		// 一个方法,用来判断对象本身(不包含原型)是否拥有某个属性
+		
+		// function Person() {
+		// 	this.name = "王久";
+		// 	this.lala = function () {
+		// 		console.log("1");
+		// 	}
+		// }
+		// Person.prototype.name = "张三";
+		// 
+		// var p = new Person();
+		// console.log(p.name);
+		// console.log(p.hasOwnProperty("__proto__"));
+		// console.log(p.hasOwnProperty("name"));
+		// console.log(p.hasOwnProperty("lala"));//还可以判断方法(成员)
+		
+		// 3.propertyIsEnumerable
+		// 1.判断属性（成员）是否属于对象本身
+		// 2.判断属性（成员）是否可以被遍历
+		// console.log(p.propertyIsEnumerable("name"));
+		// console.log(p.propertyIsEnumerable("lala"));
+		
+		// Object.defineProperty();
+		// 使用以上方法添加属性的时候,可以附加一些信息
+		// 例如这个属性是否可写 可读 可遍历
+		
+		// for(var k in p) {
+		// 	console.log(k);
+		// }
+		
+		// 4.toString 和 toLocaleString
+		// var o = {};
+		// console.log(o.toString());
+		// console.log(o.toLocaleString());
+		// 
+		// var now = new Date();
+		// console.log(now.toString());
+		// console.log(now.toLocaleString());
+		
+		// 5.valueOf
+		// 获取当前对象的值
+		
+		function Person() {
+			
+		}
+		var p = new Person();
+		
+		// 在对象参与运算的时候
+		// 1.默认的会先去调用对象的valueOf方法
+		// 2.如果valueOf获取到的值,无法进行运算,就去调用p的toString方法,
+		// 最终做的就是字符串的拼接工作
+		console.log(1 + p);
+		
+		// 6.__proto__
+		// 原型对象中的属性
+		// 可以使用 对象.__proto__去访问原型对象
+    </script>
+</head>
+<body>
+
+</body>
+</html>
